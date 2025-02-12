@@ -1,10 +1,7 @@
 * {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  user-select: none;
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -18,7 +15,7 @@ body {
 
 body {
   margin: 0;
-  background-color: #fff;
+  background-color: #ffeff5;
 }
 
 #player-container {
@@ -26,8 +23,8 @@ body {
   top: 50%;
   right: 0;
   left: 0;
-  width: 430px;
-  height: 100px;
+  width: 300px;
+  height: 80px;
   margin: -4px auto;
 }
 
@@ -67,6 +64,7 @@ body {
   top: 0;
   right: 15px;
   left: 15px;
+  height: 58px;
   padding: 13px 22px 10px 184px;
   background-color: #f7ffdc;
   border-radius: 15px 15px 0 0;
@@ -75,19 +73,20 @@ body {
 }
 
 #player-track.active {
-  top: -92px;
+  top: -80px;
 }
 
 #album-name {
   color: #526900;
-  font-size: 17px;
-  font-weight: bold;
+  font-size: 12px;
+  font-weight: bold;;
+  margin: 0px -10px 0px -80px;
 }
 
 #track-name {
   color: #acaebd;
-  font-size: 13px;
-  margin: 2px 0 13px 0;
+  font-size: 10px;
+  margin: 2px -10px 13px -80px;
 }
 
 #track-time {
@@ -97,10 +96,16 @@ body {
 }
 
 #current-time {
+    position: absolute;
+  left: 105px; /* Posiciona o tempo atual no lado esquerdo */
+  top: 50; /* Define a posição no eixo vertical */
   float: left;
 }
 
 #track-length {
+    position: absolute;
+  right: 10px; /* Posiciona o tempo total no lado direito */
+  top: 55px; /* Define a posição no eixo vertical */
   float: right;
 }
 
@@ -121,7 +126,9 @@ body {
 
 #seek-bar-container,
 #seek-bar {
-  position: relative;
+  position: absolute;
+  left: 40%;
+  width: 50px;
   height: 4px;
   border-radius: 4px;
 }
@@ -129,6 +136,7 @@ body {
 #seek-bar-container {
   background-color: #b6c485;
   cursor: pointer;
+  width: 150px;
 }
 
 #seek-time {
@@ -172,6 +180,7 @@ body {
   position: relative;
   height: 100%;
   background-color: #b6c485;
+  box-shadow: 0 30px 80px #656565;
   border-radius: 15px;
   z-index: 2;
 }
@@ -179,9 +188,9 @@ body {
 #album-art {
   position: absolute;
   top: -40px;
-  width: 115px;
-  height: 115px;
-  margin-left: 40px;
+  width: 80px;
+  height: 80px;
+  margin-left: 30px;
   transform: rotateZ(0);
   transition: 0.3s ease all;
   box-shadow: 0 0 0 10px #b6c485;
@@ -227,17 +236,7 @@ body {
 
 #album-art.active img.active {
   z-index: 1;
-  -webkit-animation: rotateAlbumArt 3s linear 0s infinite forwards;
-          animation: rotateAlbumArt 3s linear 0s infinite forwards;
-}
-
-@-webkit-keyframes rotateAlbumArt {
-  0% {
-    transform: rotateZ(0);
-  }
-  100% {
-    transform: rotateZ(360deg);
-  }
+  animation: rotateAlbumArt 3s linear 0s infinite forwards;
 }
 
 @keyframes rotateAlbumArt {
@@ -288,23 +287,23 @@ body {
 }
 
 #player-controls {
-  width: 250px;
+  width: 150px;
   height: 100%;
-  margin: 0 5px 0 141px;
-  float: right;
+  margin: 0 5px 0 120px;
+  float: left;
   overflow: hidden;
 }
 
 .control {
-  width: 33.333%;
+  width: 20%;
   float: left;
-  padding: 12px 0;
+  padding: 12px 10px;
 }
 
 .button {
-  width: 26px;
-  height: 26px;
-  padding: 25px;
+  width: 15px;
+  height: 15px;
+  padding: 15px;
   background-color: #b6c485;
   border-radius: 6px;
   cursor: pointer;
@@ -313,7 +312,7 @@ body {
 .button i {
   display: block;
   color: #526900;
-  font-size: 26px;
+  font-size: 18px;
   text-align: center;
   line-height: 1;
 }
